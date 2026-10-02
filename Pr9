@@ -1,0 +1,46 @@
+Univariate, Bivariate and Multivariate Analysis
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Create real-world student dataset
+data = {
+    "StudyHours": [2, 3, 4, 5, 6, 7, 8, 9],
+    "Attendance": [60, 65, 70, 75, 80, 85, 90, 95],
+    "Marks": [45, 50, 58, 65, 70, 78, 85, 92]
+}
+
+df = pd.DataFrame(data)
+
+print(df)
+
+# Univariate Analysis
+print("Study Hours Mean:", df["StudyHours"].mean())
+print("Study Hours Median:", df["StudyHours"].median())
+print("Study Hours Minimum:", df["StudyHours"].min())
+print("Study Hours Maximum:", df["StudyHours"].max())
+
+df["Marks"].plot(kind="hist")
+plt.title("Distribution of Marks")
+plt.xlabel("Marks")
+plt.show()
+
+
+# Bivariate Analysis
+print(df[["StudyHours", "Marks"]].corr())
+
+plt.scatter(df["StudyHours"], df["Marks"])
+plt.xlabel("Study Hours")
+plt.ylabel("Marks")
+plt.title("Study Hours vs Marks")
+plt.show()
+
+
+# Multivariate Analysis
+print(df.corr())
+
+pd.plotting.scatter_matrix(
+    df,
+    figsize=(8, 8)
+)
+
+plt.show()
