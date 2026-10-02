@@ -1,0 +1,57 @@
+list
+fruits = ["apple", "banana", "mango"]
+
+print(fruits)
+fruits.append("orange")
+fruits.insert(1, "grapes")
+fruits.remove("banana")
+
+print(fruits)
+print(len(fruits))
+print(sorted(fruits))
+
+tuple
+numbers = (10, 20, 30, 20)
+
+print(numbers)
+print(numbers.count(20))
+print(numbers.index(30))
+print(len(numbers))
+
+set
+numbers = {10, 20, 30}
+
+numbers.add(40)
+numbers.remove(20)
+
+print(numbers)
+print(len(numbers))
+print(30 in numbers)
+
+dictonary
+student = {
+    "name": "Meera",
+    "age": 20,
+    "course": "Computer Engineering"
+}
+
+print(student)
+print(student.get("name"))
+
+student["age"] = 21
+student["city"] = "Surat"
+
+print(student.keys())
+print(student.values())
+print(student.items())
+
+string
+text = "Python Programming"
+
+print(text)
+print(text.upper())
+print(text.lower())
+print(len(text))
+print(text.replace("Python", "Java"))
+print(text.find("Programming"))
+print(text.split())
