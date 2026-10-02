@@ -1,0 +1,53 @@
+Python with MySQL – CRUD Operation
+import mysql.connector
+
+# Connect to MySQL
+con = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="your_password",
+    database="college"
+)
+
+cursor = con.cursor()
+
+# Create
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS student(
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    marks INT
+)
+""")
+
+cursor.execute(
+    "INSERT INTO student VALUES (%s, %s, %s)",
+    (1, "Meera", 85)
+)
+
+con.commit()
+
+# Read
+cursor.execute("SELECT * FROM student")
+
+for row in cursor.fetchall():
+    print(row)
+
+# Update
+cursor.execute(
+    "UPDATE student SET marks=%s WHERE id=%s",
+    (90, 1)
+)
+
+con.commit()
+
+# Delete
+cursor.execute(
+    "DELETE FROM student WHERE id=%s",
+    (1,)
+)
+
+con.commit()
+
+cursor.close()
+con.close()
