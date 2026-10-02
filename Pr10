@@ -1,0 +1,49 @@
+NumPy Array Creation, Indexing, Slicing, Reshaping, Broadcasting and Mathematical Operations
+import numpy as np
+
+# Creating 1D array
+a = np.array([10, 20, 30, 40, 50])
+print("1D Array:", a)
+
+# Creating 2D array
+b = np.array([[1, 2, 3], [4, 5, 6]])
+print("2D Array:")
+print(b)
+
+# Creating 3D array
+c = np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
+print("3D Array:")
+print(c)
+
+# Indexing
+print("First element:", a[0])
+print("Element:", b[1, 2])
+
+# Slicing
+print("Array Slice:", a[1:4])
+print("2D Slice:")
+print(b[:, 1:3])
+
+# Reshaping
+d = np.array([1, 2, 3, 4, 5, 6])
+print("Reshaped Array:")
+print(d.reshape(2, 3))
+
+# Broadcasting
+x = np.array([[1, 2, 3], [4, 5, 6]])
+y = 10
+print("Broadcasting:")
+print(x + y)
+
+# Mathematical Operations
+print("Addition:", a + 5)
+print("Subtraction:", a - 5)
+print("Multiplication:", a * 2)
+print("Division:", a / 2)
+
+print("Square:", np.square(a))
+print("Square Root:", np.sqrt(a))
+print("Sum:", np.sum(a))
+print("Mean:", np.mean(a))
+print("Maximum:", np.max(a))
+print("Minimum:", np.min(a))
