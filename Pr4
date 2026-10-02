@@ -1,0 +1,75 @@
+User-Defined Functions and Built-in Modules
+# User-defined function without argument
+def greet():
+    print("Hello")
+
+greet()
+
+# Function with arguments
+def add(a, b):
+    print("Sum:", a + b)
+
+add(10, 20)
+
+# Function with default argument
+def welcome(name="Student"):
+    print("Hello", name)
+
+welcome()
+welcome("Meera")
+
+# Function with keyword arguments
+def student(name, age):
+    print("Name:", name)
+    print("Age:", age)
+
+student(age=20, name="Meera")
+
+# Function with variable-length arguments
+def total(*numbers):
+    print("Total:", sum(numbers))
+
+total(10, 20, 30, 40)
+
+# Math module
+import math
+
+print("Square Root:", math.sqrt(25))
+print("Power:", math.pow(2, 3))
+print("Factorial:", math.factorial(5))
+print("Ceiling:", math.ceil(4.3))
+print("Floor:", math.floor(4.8))
+
+# Random module
+import random
+
+print("Random Number:", random.randint(1, 100))
+print("Random Choice:", random.choice(["Apple", "Banana", "Mango"]))
+
+# Statistics module
+import statistics
+
+numbers = [10, 20, 30, 40, 50]
+
+print("Mean:", statistics.mean(numbers))
+print("Median:", statistics.median(numbers))
+print("Mode:", statistics.mode([10, 20, 20, 30]))
+
+output
+Hello
+Sum: 30
+Hello Student
+Hello Meera
+Name: Meera
+Age: 20
+Total: 100
+Square Root: 5.0
+Power: 8.0
+Factorial: 120
+Ceiling: 5
+Floor: 4
+Random Number: 57
+Random Choice: Banana
+Mean: 30
+Median: 30
+Mode: 20
