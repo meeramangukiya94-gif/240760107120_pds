@@ -1,0 +1,67 @@
+Read, Write and Append Operations on Text, CSV and Binary File
+import csv
+import pickle
+
+# Text File - Write
+with open("data.txt", "w") as file:
+    file.write("Python Programming\n")
+    file.write("Computer Engineering\n")
+
+# Text File - Read
+with open("data.txt", "r") as file:
+    print("Text File:")
+    print(file.read())
+
+# Text File - Append
+with open("data.txt", "a") as file:
+    file.write("File Handling\n")
+
+with open("data.txt", "r") as file:
+    print(file.read())
+
+
+# CSV File - Write
+with open("student.csv", "w", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(["Name", "Age", "Marks"])
+    writer.writerow(["Meera", 20, 85])
+    writer.writerow(["Riya", 21, 90])
+
+# CSV File - Read
+with open("student.csv", "r") as file:
+    reader = csv.reader(file)
+    print("CSV File:")
+    for row in reader:
+        print(row)
+
+# CSV File - Append
+with open("student.csv", "a", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(["Neha", 20, 88])
+
+
+# Binary File - Write
+student = {
+    "name": "Meera",
+    "age": 20,
+    "marks": 85
+}
+
+with open("student.dat", "wb") as file:
+    pickle.dump(student, file)
+
+# Binary File - Read
+with open("student.dat", "rb") as file:
+    data = pickle.load(file)
+    print("Binary File:")
+    print(data)
+
+# Binary File - Append
+student2 = {
+    "name": "Riya",
+    "age": 21,
+    "marks": 90
+}
+
+with open("student.dat", "ab") as file:
+    pickle.dump(student2, file)
