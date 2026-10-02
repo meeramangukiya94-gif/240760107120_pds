@@ -1,0 +1,49 @@
+Exception Handling
+# try and except
+try:
+    a = 10
+    b = 0
+    result = a / b
+    print(result)
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+
+
+# try, except and else
+try:
+    number = int(input("Enter a number: "))
+    print("Number:", number)
+except ValueError:
+    print("Invalid input")
+else:
+    print("Input is valid")
+
+
+# try, except, else and finally
+try:
+    a = int(input("Enter first number: "))
+    b = int(input("Enter second number: "))
+    print("Division:", a / b)
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+except ValueError:
+    print("Enter numbers only")
+else:
+    print("Operation successful")
+finally:
+    print("Program completed")
+
+
+# Custom Exception using raise
+class AgeError(Exception):
+    pass
+
+try:
+    age = int(input("Enter age: "))
+
+    if age < 18:
+        raise AgeError("Age must be 18 or above")
+
+    print("Eligible")
+except AgeError as e:
+    print(e)
